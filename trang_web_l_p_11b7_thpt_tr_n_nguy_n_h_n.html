@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11B7 - THPT Trần Nguyên Hãn | Tuổi Trẻ & Đam Mê</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#2563eb',
+                            cyan: '#06b6d4',
+                            orange: '#f97316',
+                            purple: '#8b5cf6',
+                            pink: '#ec4899',
+                            dark: '#0f172a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 4s ease-in-out infinite',
+                        'bounce-short': 'bounceShort 1s infinite'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        bounceShort: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-5px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Glassmorphism style */
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .glass {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .dark .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3b82f6;
+            border-radius: 9999px;
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #2563eb, #06b6d4, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-purple {
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans transition-colors duration-300 min-h-screen flex flex-col selection:bg-blue-500 selection:text-white">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-40 glass transition-all duration-300 border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo & Name -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-blue-600 via-indigo-500 to-amber-500 p-0.5 shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform duration-300">
+                    <div class="w-full h-full bg-white dark:bg-slate-900 rounded-[14px] flex items-center justify-center font-extrabold text-xl text-blue-600 dark:text-blue-400">
+                        11B7
+                    </div>
+                </div>
+                <div>
+                    <h1 class="font-extrabold text-lg sm:text-xl leading-tight tracking-tight">11B7 <span class="text-xs px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-300 font-semibold uppercase">TNH</span></h1>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">THPT Trần Nguyên Hãn</p>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center gap-1 xl:gap-2">
+                <a href="#about" class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-all">Giới thiệu</a>
+                <a href="#members" class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-all">Thành viên</a>
+                <a href="#gallery" class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-all">Kỷ niệm</a>
+                <a href="#schedule" class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-all">Lịch học & Sự kiện</a>
+                <a href="#honor" class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-all">Bảng Vàng</a>
+                <a href="#guestbook" class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-all">Lưu Bút</a>
+            </nav>
+
+            <!-- Actions Right -->
+            <div class="flex items-center gap-3">
+                <!-- Dark / Light Mode Toggle -->
+                <button id="themeToggleBtn" onclick="toggleTheme()" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center justify-center transition-all focus:outline-none" aria-label="Đổi giao diện">
+                    <i class="fa-solid fa-moon text-lg dark:hidden"></i>
+                    <i class="fa-solid fa-sun text-lg hidden dark:block text-amber-400"></i>
+                </button>
+
+                <!-- Mobile menu toggle -->
+                <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 flex items-center justify-center focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl px-4 pt-3 pb-6 space-y-2 transition-all">
+            <a href="#about" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-xl text-base font-semibold text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-800">Giới thiệu</a>
+            <a href="#members" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-xl text-base font-semibold text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-800">Thành viên</a>
+            <a href="#gallery" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-xl text-base font-semibold text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-800">Kỷ niệm</a>
+            <a href="#schedule" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-xl text-base font-semibold text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-800">Lịch học & Sự kiện</a>
+            <a href="#honor" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-xl text-base font-semibold text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-800">Bảng Vàng</a>
+            <a href="#guestbook" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-xl text-base font-semibold text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-800">Lưu Bút Online</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative overflow-hidden pt-8 pb-16 lg:py-24 bg-gradient-to-b from-blue-50/50 via-slate-50 to-white dark:from-slate-900/40 dark:via-slate-950 dark:to-slate-950">
+        <!-- Background Blur Blobs -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-400/20 dark:bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-72 h-72 bg-amber-400/20 dark:bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Text Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100/80 dark:bg-blue-950/80 border border-blue-200 dark:border-blue-800 text-blue-700 dark:text-blue-300 text-xs sm:text-sm font-bold shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+                        THPT TRẦN NGUYÊN HÃN - HẢI PHÒNG
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Tập Thể <span class="text-gradient">11B7</span><br/>
+                        Nơi Kỷ Niệm Rực Rỡ
+                    </h1>
+                    
+                    <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        <i class="fa-solid fa-quote-left text-blue-500 mr-2 opacity-50"></i>
+                        <span id="sloganText" class="font-semibold text-slate-800 dark:text-slate-100">"11B7 - Đoàn kết là sức mạnh, bứt phá là bản sắc!"</span>
+                        <i class="fa-solid fa-quote-right text-blue-500 ml-2 opacity-50"></i>
+                    </p>
+
+                    <p class="text-sm sm:text-base text-slate-500 dark:text-slate-400">
+                        Hành trình thanh xuân dưới mái trường THPT Trần Nguyên Hãn thân yêu. Cùng nhau học tập, gắn kết và tạo nên những khoảnh khắc đáng nhớ nhất!
+                    </p>
+
+                    <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                        <a href="#members" class="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5 transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-users"></i> Khám phá thành viên
+                        </a>
+                        <a href="#guestbook" class="px-6 py-3.5 rounded-2xl bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-bold border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-pen-nib text-amber-500"></i> Viết lưu bút
+                        </a>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="pt-8 border-t border-slate-200/80 dark:border-slate-800 grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0 text-center">
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-blue-600 dark:text-blue-400">42</p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Thành viên</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-amber-500">100%</p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Nhiệt huyết</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-purple-500">1</p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Gia đình B7</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Class Photo Showcase -->
+                <div class="lg:col-span-5">
+                    <div class="relative group">
+                        <!-- Decorative Frame Layer -->
+                        <div class="absolute -inset-1.5 bg-gradient-to-r from-blue-600 via-cyan-400 to-amber-500 rounded-3xl blur opacity-75 group-hover:opacity-100 transition duration-500"></div>
+                        
+                        <!-- Main Image Container -->
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-slate-900 border border-white/20">
+                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop" 
+                                 alt="Ảnh tập thể lớp 11B7" 
+                                 class="w-full h-[380px] sm:h-[450px] object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                                 onerror="this.src='https://placehold.co/800x600/2563eb/ffffff?text=Tap+the+lop+11B7'">
+                            
+                            <!-- Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent flex flex-col justify-end p-6 text-white">
+                                <span class="text-xs uppercase tracking-wider text-amber-400 font-bold mb-1">Kỷ niệm đáng nhớ</span>
+                                <h3 class="text-xl font-bold">Tập thể lớp 11B7 năm học 2024 - 2025</h3>
+                                <p class="text-xs text-slate-300 mt-1">Chụp tại khuôn viên Trường THPT Trần Nguyên Hãn</p>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badge -->
+                        <div class="absolute -bottom-5 -right-5 bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-3 animate-float hidden sm:flex">
+                            <div class="w-10 h-10 rounded-full bg-amber-100 dark:bg-amber-900/50 text-amber-600 flex items-center justify-center text-xl font-bold">
+                                🏆
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-800 dark:text-slate-100">Lớp Tiên Tiến Xung Kích</p>
+                                <p class="text-[10px] text-slate-500">Đoàn Trường THPT TNH</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-16 bg-white dark:bg-slate-900/60 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-2">Giới thiệu chung</h2>
+                <p class="text-3xl font-extrabold text-slate-900 dark:text-white">Ngôi Nhà 11B7 Có Gi?</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 mx-auto rounded-full mt-3"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- GVCN Card -->
+                <div class="glass-card p-6 rounded-3xl relative overflow-hidden group hover:-translate-y-1 transition duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Giáo Viên Chủ Nhiệm</h3>
+                    <div class="flex items-center gap-3 my-3">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop" 
+                             alt="GVCN" class="w-12 h-12 rounded-full object-cover border-2 border-blue-500"
+                             onerror="this.src='https://placehold.co/150x150/2563eb/ffffff?text=GVCN'">
+                        <div>
+                            <p class="font-bold text-slate-800 dark:text-slate-100">Cô Nguyễn Thị Mai</p>
+                            <p class="text-xs text-blue-600 dark:text-blue-400 font-medium">Bộ môn: Ngữ Văn</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-600 dark:text-slate-300">
+                        "Người thuyền trưởng tận tụy, luôn bao dung, lắng nghe và truyền cảm hứng cho 11B7 vươn xa trong mọi hoạt động."
+                    </p>
+                </div>
+
+                <!-- Ban Cán Sự Card -->
+                <div class="glass-card p-6 rounded-3xl relative overflow-hidden group hover:-translate-y-1 transition duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Ban Cán Sự Uy Lực</h3>
+                    <ul class="text-sm space-y-2 text-slate-600 dark:text-slate-300">
+                        <li class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-1">
+                            <span><strong class="text-slate-800 dark:text-slate-100">Lớp Trưởng:</strong> Hoàng Anh Đức</span>
+                            <span class="text-xs bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded-md">Quyền lực</span>
+                        </li>
+                        <li class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-1">
+                            <span><strong class="text-slate-800 dark:text-slate-100">Lớp Phó Hập Tập:</strong> Trần Bảo Ngọc</span>
+                            <span class="text-xs bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 px-2 py-0.5 rounded-md">Học giỏi</span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span><strong class="text-slate-800 dark:text-slate-100">Bí Thư Chi Đoàn:</strong> Nguyễn Minh Triết</span>
+                            <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded-md">Năng nổ</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Thành Tích Card -->
+                <div class="glass-card p-6 rounded-3xl relative overflow-hidden group hover:-translate-y-1 transition duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Thành Tích Nổi Bật</h3>
+                    <ul class="text-sm space-y-2 text-slate-600 dark:text-slate-300">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-green-500"></i> Giải Nhất Văn Nghệ Chào Mừng 20/11
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-green-500"></i> Giải Nhì Bóng Đá Nam Cấp Trường
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-green-500"></i> Top 3 Lớp Học Tốt Tuần Toàn Trường
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-green-500"></i> 100% Học sinh tham gia phong trào xuất sắc
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEMBERS SECTION -->
+    <section id="members" class="py-16 bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                <div>
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-2">Danh sách thành viên</h2>
+                    <p class="text-3xl font-extrabold text-slate-900 dark:text-white">Gương Mặt 11B7</p>
+                </div>
+
+                <!-- Filter & Search Controls -->
+                <div class="flex flex-wrap items-center gap-3">
+                    <!-- Search input -->
+                    <div class="relative min-w-[200px]">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                        <input type="text" id="memberSearch" onkeyup="filterMembers()" placeholder="Tìm tên, biệt danh..." 
+                               class="w-full pl-9 pr-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm">
+                    </div>
+
+                    <!-- Group Filter Buttons -->
+                    <div class="flex items-center bg-white dark:bg-slate-800 p-1 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-x-auto max-w-full">
+                        <button onclick="setGroupFilter('all')" class="group-btn active px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-blue-600 text-white" data-group="all">Tất cả</button>
+                        <button onclick="setGroupFilter('1')" class="group-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-all" data-group="1">Tổ 1</button>
+                        <button onclick="setGroupFilter('2')" class="group-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-all" data-group="2">Tổ 2</button>
+                        <button onclick="setGroupFilter('3')" class="group-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-all" data-group="3">Tổ 3</button>
+                        <button onclick="setGroupFilter('4')" class="group-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-all" data-group="4">Tổ 4</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Members Grid Container -->
+            <div id="membersGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Javascript will populate members here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY & MEMORIES -->
+    <section id="gallery" class="py-16 bg-white dark:bg-slate-900/60 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-2">Thư viện ảnh</h2>
+                <p class="text-3xl font-extrabold text-slate-900 dark:text-white">Góc Kỷ Niệm 11B7</p>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">Lưu giữ từng khoảnh khắc thanh xuân dưới mái trường Trần Nguyên Hãn</p>
+            </div>
+
+            <!-- Category Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 mb-8">
+                <button onclick="filterGallery('all')" class="gallery-tab px-4 py-2 rounded-full text-xs font-bold bg-blue-600 text-white shadow-sm" data-cat="all">Tất cả ảnh</button>
+                <button onclick="filterGallery('khaigiang')" class="gallery-tab px-4 py-2 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-slate-700" data-cat="khaigiang">Khai Giảng</button>
+                <button onclick="filterGallery('vannghe')" class="gallery-tab px-4 py-2 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-slate-700" data-cat="vannghe">Văn Nghệ 20/11</button>
+                <button onclick="filterGallery('dangoai')" class="gallery-tab px-4 py-2 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-slate-700" data-cat="dangoai">Dã Ngoại & Trải Nghiệm</button>
+                <button onclick="filterGallery('sinhnhat')" class="gallery-tab px-4 py-2 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-slate-700" data-cat="sinhnhat">Sinh Nhật Lớp</button>
+            </div>
+
+            <!-- Photos Grid -->
+            <div id="galleryGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Javascript populates photos -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SCHEDULE & EVENTS -->
+    <section id="schedule" class="py-16 bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Left: Countdown Timer & Events -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-2">Sự kiện sắp tới</h2>
+                        <p class="text-3xl font-extrabold text-slate-900 dark:text-white">Đếm Ngược Sự Kiện</p>
+                    </div>
+
+                    <!-- Main Event Banner -->
+                    <div class="glass-card p-6 rounded-3xl border-2 border-blue-500/30 bg-gradient-to-br from-blue-50/50 via-white to-amber-50/50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800 relative overflow-hidden">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/60 text-blue-600 dark:text-blue-300 text-xs font-bold">
+                                🔥 Hot Event
+                            </span>
+                            <span id="eventName" class="text-xs font-semibold text-slate-500 dark:text-slate-400">Thi Giữa Kỳ I</span>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4" id="eventTitle">Kiểm Tra Giữa Học Kỳ I 2024</h3>
+
+                        <!-- Countdown timer UI -->
+                        <div class="grid grid-cols-4 gap-2 text-center" id="countdownBox">
+                            <div class="bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
+                                <span id="cdDays" class="block text-2xl font-extrabold text-blue-600 dark:text-blue-400">00</span>
+                                <span class="text-[10px] uppercase font-semibold text-slate-400">Ngày</span>
+                            </div>
+                            <div class="bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
+                                <span id="cdHours" class="block text-2xl font-extrabold text-amber-500">00</span>
+                                <span class="text-[10px] uppercase font-semibold text-slate-400">Giờ</span>
+                            </div>
+                            <div class="bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
+                                <span id="cdMins" class="block text-2xl font-extrabold text-purple-500">00</span>
+                                <span class="text-[10px] uppercase font-semibold text-slate-400">Phút</span>
+                            </div>
+                            <div class="bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
+                                <span id="cdSecs" class="block text-2xl font-extrabold text-pink-500">00</span>
+                                <span class="text-[10px] uppercase font-semibold text-slate-400">Giây</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upcoming List -->
+                    <div class="glass-card p-6 rounded-3xl space-y-4">
+                        <h4 class="font-bold text-slate-900 dark:text-white text-sm uppercase tracking-wider">Lịch sự kiện trong tháng</h4>
+                        
+                        <div class="flex items-center gap-4 p-3 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-100 dark:border-slate-800">
+                            <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 font-extrabold flex flex-col items-center justify-center text-xs">
+                                <span>20</span>
+                                <span class="text-[9px] uppercase font-medium">Th11</span>
+                            </div>
+                            <div class="flex-1">
+                                <h5 class="font-bold text-sm text-slate-800 dark:text-slate-100">Ngày Nhà Giáo Việt Nam</h5>
+                                <p class="text-xs text-slate-500">Tri ân thầy cô THPT TNH</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-3 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-100 dark:border-slate-800">
+                            <div class="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/50 text-amber-600 dark:text-amber-400 font-extrabold flex flex-col items-center justify-center text-xs">
+                                <span>15</span>
+                                <span class="text-[9px] uppercase font-medium">Th12</span>
+                            </div>
+                            <div class="flex-1">
+                                <h5 class="font-bold text-sm text-slate-800 dark:text-slate-100">Dã Ngoại Học Tập Hoạt Động Trải Nghiệm</h5>
+                                <p class="text-xs text-slate-500">Hành trình trải nghiệm Ba Vì</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Timetable (Thời Khóa Biểu) -->
+                <div class="lg:col-span-7 space-y-4">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <div>
+                            <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-1">Thời khóa biểu</h2>
+                            <p class="text-2xl font-extrabold text-slate-900 dark:text-white">Lịch Học Trong Tuần</p>
+                        </div>
+
+                        <!-- Day Selector Buttons -->
+                        <div class="flex gap-1 overflow-x-auto bg-white dark:bg-slate-800 p-1 rounded-xl border border-slate-200 dark:border-slate-700">
+                            <button onclick="renderSchedule('T2')" class="sched-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-blue-600 text-white" data-day="T2">Thứ 2</button>
+                            <button onclick="renderSchedule('T3')" class="sched-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300" data-day="T3">Thứ 3</button>
+                            <button onclick="renderSchedule('T4')" class="sched-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300" data-day="T4">Thứ 4</button>
+                            <button onclick="renderSchedule('T5')" class="sched-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300" data-day="T5">Thứ 5</button>
+                            <button onclick="renderSchedule('T6')" class="sched-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300" data-day="T6">Thứ 6</button>
+                            <button onclick="renderSchedule('T7')" class="sched-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300" data-day="T7">Thứ 7</button>
+                        </div>
+                    </div>
+
+                    <!-- Timetable Content Card -->
+                    <div class="glass-card rounded-3xl p-6 overflow-hidden">
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="border-b border-slate-200 dark:border-slate-800 text-xs uppercase font-extrabold text-slate-400">
+                                        <th class="py-3 px-4">Tiết</th>
+                                        <th class="py-3 px-4">Thời gian</th>
+                                        <th class="py-3 px-4">Môn Học</th>
+                                        <th class="py-3 px-4">Phòng / Ghi chú</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="scheduleBody" class="divide-y divide-slate-100 dark:divide-slate-800/60 text-sm">
+                                    <!-- Populated dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- HALL OF FAME / BẢNG VÀNG -->
+    <section id="honor" class="py-16 bg-white dark:bg-slate-900/60 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-amber-500 mb-2">Vinh danh cá nhân</h2>
+                <p class="text-3xl font-extrabold text-slate-900 dark:text-white">Bảng Vàng 11B7</p>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">Tuyên dương các thành viên xuất sắc trong học tập, thể thao và phong trào</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Honor Card 1 -->
+                <div class="glass-card p-6 rounded-3xl text-center relative group hover:-translate-y-2 transition duration-300 border-amber-500/20">
+                    <div class="w-20 h-20 mx-auto rounded-full p-1 bg-gradient-to-tr from-amber-400 to-amber-600 mb-4 shadow-lg shadow-amber-500/20">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" 
+                             alt="Thành viên xuất sắc" class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <span class="inline-block px-3 py-1 rounded-full bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-300 text-xs font-bold mb-2">
+                        🥇 Thủ Khoa Kỳ Thi
+                    </span>
+                    <h4 class="font-bold text-lg text-slate-900 dark:text-white">Trần Bảo Ngọc</h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Đạt điểm trung bình cao nhất lớp (9.4) & Giải Nhất HSG Toán Cấp Trường</p>
+                </div>
+
+                <!-- Honor Card 2 -->
+                <div class="glass-card p-6 rounded-3xl text-center relative group hover:-translate-y-2 transition duration-300">
+                    <div class="w-20 h-20 mx-auto rounded-full p-1 bg-gradient-to-tr from-blue-400 to-indigo-600 mb-4 shadow-lg shadow-blue-500/20">
+                        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=200&auto=format&fit=crop" 
+                             alt="Thành viên" class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <span class="inline-block px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 text-xs font-bold mb-2">
+                        ⚽ Thể Thao Bứt phá
+                    </span>
+                    <h4 class="font-bold text-lg text-slate-900 dark:text-white">Nguyễn Văn Huy</h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Vua phá lưới Giải Bóng Đá Học Sinh Trường THPT Trần Nguyên Hãn</p>
+                </div>
+
+                <!-- Honor Card 3 -->
+                <div class="glass-card p-6 rounded-3xl text-center relative group hover:-translate-y-2 transition duration-300">
+                    <div class="w-20 h-20 mx-auto rounded-full p-1 bg-gradient-to-tr from-pink-400 to-purple-600 mb-4 shadow-lg shadow-purple-500/20">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=200&auto=format&fit=crop" 
+                             alt="Thành viên" class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <span class="inline-block px-3 py-1 rounded-full bg-pink-100 dark:bg-pink-900/50 text-pink-700 dark:text-pink-300 text-xs font-bold mb-2">
+                        🎨 Sao Văn Nghệ
+                    </span>
+                    <h4 class="font-bold text-lg text-slate-900 dark:text-white">Lê Thảo My</h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Hạt nhân văn nghệ năng nổ, dàn dựng tiết mục giải Nhất 20/11</p>
+                </div>
+
+                <!-- Honor Card 4 -->
+                <div class="glass-card p-6 rounded-3xl text-center relative group hover:-translate-y-2 transition duration-300">
+                    <div class="w-20 h-20 mx-auto rounded-full p-1 bg-gradient-to-tr from-emerald-400 to-teal-600 mb-4 shadow-lg shadow-emerald-500/20">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop" 
+                             alt="Thành viên" class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <span class="inline-block px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 text-xs font-bold mb-2">
+                        🌟 Cán Bộ Gương Mẫu
+                    </span>
+                    <h4 class="font-bold text-lg text-slate-900 dark:text-white">Hoàng Anh Đức</h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Lớp trưởng tận tâm, điều hành và quản lý phong trào tập thể xuất sắc</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GUESTBOOK / MEMORY WALL -->
+    <section id="guestbook" class="py-16 bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-10">
+                
+                <!-- Left: Form Submission -->
+                <div class="lg:col-span-5 space-y-4">
+                    <div>
+                        <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-2">Lưu bút online</h2>
+                        <p class="text-3xl font-extrabold text-slate-900 dark:text-white">Gửi Lời Chúc B7</p>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Để lại những cảm xúc, kỷ niệm và lời chúc thân thương dành cho cả lớp!</p>
+                    </div>
+
+                    <form id="guestbookForm" onsubmit="handleGuestbookSubmit(event)" class="glass-card p-6 rounded-3xl space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 mb-1">Tên của bạn *</label>
+                            <input type="text" id="gbName" required placeholder="Nhập tên hoặc biệt danh..." 
+                                   class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 mb-1">Tổ / Vai trò</label>
+                            <select id="gbGroup" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="Tổ 1">Tổ 1</option>
+                                <option value="Tổ 2">Tổ 2</option>
+                                <option value="Tổ 3">Tổ 3</option>
+                                <option value="Tổ 4">Tổ 4</option>
+                                <option value="Thầy Cô / Bạn Bè Khác">Thầy Cô / Bạn Bè Khác</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 mb-1">Lời nhắn gửi *</label>
+                            <textarea id="gbMessage" required rows="4" placeholder="Viết những dòng tâm sự, kỷ niệm đáng nhớ tại 11B7..." 
+                                      class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Gửi Lời Nhắn
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Right: Messages Wall Feed -->
+                <div class="lg:col-span-7">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                            <i class="fa-solid fa-comments text-amber-500"></i> Bức Tường Lời Chúc
+                        </h3>
+                        <span id="guestbookCount" class="text-xs bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-300 px-3 py-1 rounded-full font-bold">
+                            0 lời nhắn
+                        </span>
+                    </div>
+
+                    <!-- Wall Scroll Box -->
+                    <div id="guestbookFeed" class="space-y-4 max-h-[500px] overflow-y-auto pr-2">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FLOATING MUSIC PLAYER (Giai điệu B7) -->
+    <div class="fixed bottom-5 right-5 z-40">
+        <div id="musicPlayer" class="glass-card p-3 rounded-2xl shadow-2xl border border-white/40 dark:border-slate-700 flex items-center gap-3 transition-all duration-300 max-w-xs sm:max-w-sm">
+            <!-- Disk Art -->
+            <div id="musicDisk" class="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-400 via-pink-500 to-blue-600 flex items-center justify-center text-white text-xs shadow-md">
+                <i class="fa-solid fa-music"></i>
+            </div>
+            
+            <!-- Song info -->
+            <div class="flex-1 min-w-0">
+                <p id="songTitle" class="text-xs font-bold text-slate-800 dark:text-slate-100 truncate">Sống Hết Mình Tuổi Trẻ</p>
+                <p id="songArtist" class="text-[10px] text-slate-500 dark:text-slate-400 truncate">Nhạc Tuổi Học Trò 11B7</p>
+            </div>
+
+            <!-- Controls -->
+            <div class="flex items-center gap-1">
+                <button onclick="prevSong()" class="w-8 h-8 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 text-xs flex items-center justify-center">
+                    <i class="fa-solid fa-backward-step"></i>
+                </button>
+                <button id="playBtn" onclick="togglePlay()" class="w-9 h-9 rounded-xl bg-blue-600 text-white shadow-md shadow-blue-500/30 flex items-center justify-center hover:scale-105 transition">
+                    <i class="fa-solid fa-play text-xs" id="playIcon"></i>
+                </button>
+                <button onclick="nextSong()" class="w-8 h-8 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 text-xs flex items-center justify-center">
+                    <i class="fa-solid fa-forward-step"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Audio element hidden -->
+        <audio id="bgAudio" loop></audio>
+    </div>
+
+    <!-- MODAL FOR MEMBER DETAILS -->
+    <div id="memberModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300">
+        <div class="glass-card max-w-md w-full rounded-3xl p-6 relative shadow-2xl border border-white/20 transform scale-95 transition-all duration-300" id="memberModalContent">
+            <button onclick="closeMemberModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center justify-center text-sm">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modalBody">
+                <!-- Loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX FOR GALLERY -->
+    <div id="lightboxModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white text-2xl w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center z-10">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="max-w-4xl max-h-[85vh] relative">
+            <img id="lightboxImg" src="" alt="Zoom Photo" class="max-w-full max-h-[80vh] rounded-2xl object-contain shadow-2xl">
+            <p id="lightboxCaption" class="text-center text-white text-sm font-medium mt-3"></p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-3">Tập Thể 11B7</h4>
+                    <p class="text-xs leading-relaxed text-slate-400">
+                        Trường THPT Trần Nguyên Hãn - Thành phố Hải Phòng.<br/>
+                        Nơi gửi gắm những kỷ niệm đẹp đẽ nhất của thời học sinh.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-3">Liên Kết Nhanh</h4>
+                    <div class="flex flex-col space-y-1.5 text-xs">
+                        <a href="#about" class="hover:text-blue-400 transition">Giới thiệu lớp</a>
+                        <a href="#members" class="hover:text-blue-400 transition">Danh sách thành viên</a>
+                        <a href="#gallery" class="hover:text-blue-400 transition">Thư viện kỷ niệm</a>
+                        <a href="#guestbook" class="hover:text-blue-400 transition">Lưu bút online</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-3">Khẩu Hiệu Lớp</h4>
+                    <p class="text-xs italic text-amber-400 mb-3">"Đoàn kết là sức mạnh, bứt phá là bản sắc!"</p>
+                    <p class="text-[11px] text-slate-500">© 2024 - 2025 Lớp 11B7 THPT Trần Nguyên Hãn. Built with ❤️ for 11B7</p>
+                </div>
+            </div>
+            <div class="pt-6 border-t border-slate-800 text-center text-xs text-slate-500">
+                Trang web chính thức của tập thể 11B7 THPT Trần Nguyên Hãn
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        /* ----------------------------------------------------
+         1. DATA DEFINITIONS (Members, Gallery, Timetable, Audio)
+        ---------------------------------------------------- */
+        
+        // Members List (4 Tổ)
+        const membersData = [
+            { id: 1, name: "Hoàng Anh Đức", group: 1, role: "Lớp Trưởng", nick: "Đức 'Đẹp Trai'", hobby: "Bóng đá, Guitar", quote: "Luôn dẫn đầu bằng trách nhiệm!", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300&auto=format&fit=crop" },
+            { id: 2, name: "Trần Bảo Ngọc", group: 1, role: "Lớp Phó Học Tập", nick: "Ngọc 'Thủ Khoa'", hobby: "Đọc sách, Giải Toán", quote: "Học hết sức, chơi hết mình!", img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=300&auto=format&fit=crop" },
+            { id: 3, name: "Nguyễn Minh Triết", group: 1, role: "Bí Thư Đoàn", nick: "Triết 'Năng Nổ'", hobby: "Tổ chức sự kiện, Cầu lông", quote: "Tuổi trẻ là không ngại cống hiến.", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=300&auto=format&fit=crop" },
+            { id: 4, name: "Phạm Khánh Linh", group: 1, role: "Thành viên", nick: "Linh 'Mây'", hobby: "Vẽ tranh, Nghe nhạc", quote: "Cuộc sống là sắc màu tươi sáng.", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=300&auto=format&fit=crop" },
+            
+            { id: 5, name: "Nguyễn Văn Huy", group: 2, role: "Tổ Trưởng Tổ 2", nick: "Huy 'Ronaldo'", hobby: "Đá bóng, Game", quote: "Chiến thắng nằm ở tinh thần tập thể.", img: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=300&auto=format&fit=crop" },
+            { id: 6, name: "Lê Thảo My", group: 2, role: "Thành viên", nick: "My 'Ca Sĩ'", hobby: "Hát, Múa", quote: "Âm nhạc kết nối mọi tâm hồn.", img: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=300&auto=format&fit=crop" },
+            { id: 7, name: "Đặng Tuấn Kiệt", group: 2, role: "Thành viên", nick: "Kiệt 'Coder'", hobby: "Lập trình, Xem phim", quote: "Code cả thế giới!", img: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=300&auto=format&fit=crop" },
+            { id: 8, name: "Vũ Phương Thảo", group: 2, role: "Thành viên", nick: "Thảo 'Bông'", hobby: "Nấu ăn, Trồng cây", quote: "Tận hưởng từng phút giây bình yên.", img: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=300&auto=format&fit=crop" },
+
+            { id: 9, name: "Bùi Hoàng Long", group: 3, role: "Tổ Trưởng Tổ 3", nick: "Long 'Gia Thế'", hobby: "Bóng rổ, Du lịch", quote: "Bứt phá giới hạn bản thân.", img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=300&auto=format&fit=crop" },
+            { id: 10, name: "Nguyễn Quỳnh Anh", group: 3, role: "Thành viên", nick: "Anh 'Mít'", hobby: "Viết lách, Chụp ảnh", quote: "Lưu giữ ký ức qua từng trang sách.", img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=300&auto=format&fit=crop" },
+            { id: 11, name: "Đỗ Quốc Cường", group: 3, role: "Thành viên", nick: "Cường 'Cơ Bắp'", hobby: "Gym, Chạy bộ", quote: "Sức khỏe là khởi đầu của thành công.", img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=300&auto=format&fit=crop" },
+            { id: 12, name: "Trần Mai Phương", group: 3, role: "Thành viên", nick: "Phương 'Hà Nội'", hobby: "Thời trang, Làm bánh", quote: "Sống là phải tỏa sáng.", img: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=300&auto=format&fit=crop" },
+
+            { id: 13, name: "Phạm Hải Đăng", group: 4, role: "Tổ Trưởng Tổ 4", nick: "Đăng 'Hải Phòng'", hobby: "Cờ vua, Du lịch", quote: "Thành công đến từ sự kiên trì.", img: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=300&auto=format&fit=crop" },
+            { id: 14, name: "Nguyễn Hà My", group: 4, role: "Thành viên", nick: "My 'Thỏ'", hobby: "Xem anime, Vẽ manga", quote: "Hãy luôn là chính mình!", img: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=300&auto=format&fit=crop" },
+            { id: 15, name: "Lê Hoàng Nam", group: 4, role: "Thành viên", nick: "Nam 'Hài Hước'", hobby: "Diễn xuất, Rap", quote: "Nụ cười xóa tan căng thẳng.", img: "https://images.unsplash.com/photo-1480429370139-e0132c086e2a?q=80&w=300&auto=format&fit=crop" },
+            { id: 16, name: "Vũ Thùy Dương", group: 4, role: "Thành viên", nick: "Dương 'Kính Cận'", hobby: "Học Tiếng Anh, Piano", quote: "Thế giới mở ra qua từng ngôn ngữ.", img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=300&auto=format&fit=crop" }
+        ];
+
+        // Gallery Photos Data
+        const galleryData = [
+            { id: 1, category: "khaigiang", title: "Lễ Khai Giảng Rạng Rỡ", img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=600&auto=format&fit=crop" },
+            { id: 2, category: "vannghe", title: "Tiết Mục Tiết Múa 20/11", img: "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=600&auto=format&fit=crop" },
+            { id: 3, category: "dangoai", title: "Chuyến Dã Ngoại Trải Nghiệm", img: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=600&auto=format&fit=crop" },
+            { id: 4, category: "sinhnhat", title: "Tiệc Sinh Nhật Lớp Ấm Cúng", img: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=600&auto=format&fit=crop" },
+            { id: 5, category: "khaigiang", title: "Áo Dài Duyên Dáng 11B7", img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=600&auto=format&fit=crop" },
+            { id: 6, category: "vannghe", title: "Đội Văn Nghệ Nhận Giải Nhất", img: "https://images.unsplash.com/photo-1465847899084-d164df4dedc6?q=80&w=600&auto=format&fit=crop" },
+            { id: 7, category: "dangoai", title: "Hoạt Động Teambuilding", img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=600&auto=format&fit=crop" },
+            { id: 8, category: "sinhnhat", title: "Bánh Sinh Nhật B7", img: "https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?q=80&w=600&auto=format&fit=crop" }
+        ];
+
+        // Timetable Data
+        const timetableData = {
+            'T2': [
+                { period: 1, time: '07:15 - 08:00', subject: 'Chào Cờ / SHDC', note: 'Sân Trường' },
+                { period: 2, time: '08:05 - 08:50', subject: 'Toán (Đại số)', note: 'Cô Thảo' },
+                { period: 3, time: '09:00 - 09:45', subject: 'Ngữ Văn', note: 'Cô Mai (GVCN)' },
+                { period: 4, time: '09:50 - 10:35', subject: 'Tiếng Anh', note: 'Thầy Đức' },
+                { period: 5, time: '10:40 - 11:25', subject: 'Vật Lý', note: 'Phòng Lab 2' }
+            ],
+            'T3': [
+                { period: 1, time: '07:15 - 08:00', subject: 'Hóa Học', note: 'Thầy Nam' },
+                { period: 2, time: '08:05 - 08:50', subject: 'Hóa Học', note: 'Thầy Nam' },
+                { period: 3, time: '09:00 - 09:45', subject: 'Toán (Hình học)', note: 'Cô Thảo' },
+                { period: 4, time: '09:50 - 10:35', subject: 'Lịch Sử', note: 'Cô Hương' },
+                { period: 5, time: '10:40 - 11:25', subject: 'GDCD', note: 'Cô Lan' }
+            ],
+            'T4': [
+                { period: 1, time: '07:15 - 08:00', subject: 'Ngữ Văn', note: 'Cô Mai' },
+                { period: 2, time: '08:05 - 08:50', subject: 'Ngữ Văn', note: 'Cô Mai' },
+                { period: 3, time: '09:00 - 09:45', subject: 'Sinh Học', note: 'Cô Hà' },
+                { period: 4, time: '09:50 - 10:35', subject: 'Tiếng Anh', note: 'Thầy Đức' },
+                { period: 5, time: '10:40 - 11:25', subject: 'Tin Học', note: 'Phòng Máy 1' }
+            ],
+            'T5': [
+                { period: 1, time: '07:15 - 08:00', subject: 'Vật Lý', note: 'Thầy Hùng' },
+                { period: 2, time: '08:05 - 08:50', subject: 'Toán (Đại số)', note: 'Cô Thảo' },
+                { period: 3, time: '09:00 - 09:45', subject: 'Địa Lý', note: 'Thầy Tuấn' },
+                { period: 4, time: '09:50 - 10:35', subject: 'Thể Dục', note: 'Sân Thể Thao' },
+                { period: 5, time: '10:40 - 11:25', subject: 'Thể Dục', note: 'Sân Thể Thao' }
+            ],
+            'T6': [
+                { period: 1, time: '07:15 - 08:00', subject: 'Tiếng Anh', note: 'Thầy Đức' },
+                { period: 2, time: '08:05 - 08:50', subject: 'Toán (Hình)', note: 'Cô Thảo' },
+                { period: 3, time: '09:00 - 09:45', subject: 'Công Nghệ', note: 'Thầy Minh' },
+                { period: 4, time: '09:50 - 10:35', subject: 'QP-AN', note: 'Sân Tập' },
+                { period: 5, time: '10:40 - 11:25', subject: 'Sinh Hoạt Lớp', note: 'Cô Mai (GVCN)' }
+            ],
+            'T7': [
+                { period: 1, time: '07:15 - 08:00', subject: 'Hoạt Động Trải Nghiệm', note: 'Hội Trường' },
+                { period: 2, time: '08:05 - 08:50', subject: 'Hoạt Động Trải Nghiệm', note: 'Hội Trường' },
+                { period: 3, time: '09:00 - 09:45', subject: 'Ôn Tập Khối A/A1', note: 'Tự Chọn' },
+                { period: 4, time: '09:50 - 10:35', subject: 'CLB Văn Thể', note: 'Tự Chọn' }
+            ]
+        };
+
+        // Music Playlist (Sử dụng nhạc royalty free audio sample)
+        const playlist = [
+            { title: "Sống Hết Mình Tuổi Trẻ", artist: "Nhạc Tuổi Học Trò 11B7", src: "https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=upbeat-pop-112191.mp3" },
+            { title: "Kỷ Niệm Mái Trường", artist: "Hải Phòng Melodies", src: "https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0a13f69d2.mp3?filename=inspiring-cinematic-ambient-116199.mp3" }
+        ];
+
+        /* ----------------------------------------------------
+         2. INITIALIZATION & STATE
+        ---------------------------------------------------- */
+        let currentGroupFilter = 'all';
+        let currentSongIndex = 0;
+        let isPlaying = false;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderMembers();
+            renderGallery('all');
+            renderSchedule('T2');
+            initCountdown();
+            loadGuestbook();
+            initAudio();
+        });
+
+        /* ----------------------------------------------------
+         3. DARK/LIGHT MODE TOGGLE
+        ---------------------------------------------------- */
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        /* ----------------------------------------------------
+         4. MEMBERS DIRECTORY FUNCTIONS
+        ---------------------------------------------------- */
+        function setGroupFilter(group) {
+            currentGroupFilter = group;
+            
+            // Active button UI update
+            document.querySelectorAll('.group-btn').forEach(btn => {
+                if (btn.getAttribute('data-group') === group.toString()) {
+                    btn.classList.add('bg-blue-600', 'text-white');
+                    btn.classList.remove('text-slate-600', 'dark:text-slate-300', 'hover:bg-slate-100');
+                } else {
+                    btn.classList.remove('bg-blue-600', 'text-white');
+                    btn.classList.add('text-slate-600', 'dark:text-slate-300');
+                }
+            });
+
+            filterMembers();
+        }
+
+        function filterMembers() {
+            const searchTerm = document.getElementById('memberSearch').value.toLowerCase();
+            const grid = document.getElementById('membersGrid');
+            
+            const filtered = membersData.filter(m => {
+                const matchesGroup = (currentGroupFilter === 'all') || (m.group.toString() === currentGroupFilter);
+                const matchesSearch = m.name.toLowerCase().includes(searchTerm) || m.nick.toLowerCase().includes(searchTerm);
+                return matchesGroup && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-12 text-slate-400">
+                        <i class="fa-solid fa-user-slash text-4xl mb-3"></i>
+                        <p class="text-sm font-semibold">Không tìm thấy thành viên phù hợp!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(m => `
+                <div class="glass-card rounded-3xl p-5 relative group hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between border border-slate-200/80 dark:border-slate-800">
+                    <div>
+                        <!-- Card Header Top -->
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-300">
+                                Tổ ${m.group}
+                            </span>
+                            <span class="text-xs font-semibold text-slate-400">
+                                ${m.role}
+                            </span>
+                        </div>
+
+                        <!-- Image & Basic Info -->
+                        <div class="text-center mb-4">
+                            <div class="relative w-20 h-20 mx-auto mb-3">
+                                <img src="${m.img}" alt="${m.name}" class="w-full h-full object-cover rounded-2xl shadow-md group-hover:scale-105 transition-transform duration-300"
+                                     onerror="this.src='https://placehold.co/200x200/2563eb/ffffff?text=${encodeURIComponent(m.name)}'">
+                            </div>
+                            <h3 class="font-bold text-slate-900 dark:text-white text-base leading-snug">${m.name}</h3>
+                            <p class="text-xs text-amber-500 font-medium mt-0.5">"${m.nick}"</p>
+                        </div>
+                    </div>
+
+                    <!-- Action Button -->
+                    <button onclick="openMemberModal(${m.id})" class="w-full py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 text-slate-700 dark:text-slate-200 text-xs font-bold transition-all flex items-center justify-center gap-1.5 mt-2">
+                        <i class="fa-solid fa-id-card"></i> Xem chi tiết
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        function renderMembers() {
+            filterMembers();
+        }
+
+        function openMemberModal(id) {
+            const m = membersData.find(item => item.id === id);
+            if (!m) return;
+
+            const modalBody = document.getElementById('modalBody');
+            modalBody.innerHTML = `
+                <div class="text-center">
+                    <img src="${m.img}" alt="${m.name}" class="w-24 h-24 object-cover rounded-3xl mx-auto shadow-lg mb-4 border-2 border-blue-500"
+                         onerror="this.src='https://placehold.co/200x200/2563eb/ffffff?text=${encodeURIComponent(m.name)}'">
+                    <span class="px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-300 text-xs font-bold uppercase">
+                        Tổ ${m.group} • ${m.role}
+                    </span>
+                    <h3 class="text-2xl font-extrabold text-slate-900 dark:text-white mt-2">${m.name}</h3>
+                    <p class="text-sm font-semibold text-amber-500 mb-4">Biệt danh: "${m.nick}"</p>
+                    
+                    <div class="space-y-3 text-left bg-slate-50 dark:bg-slate-800/60 p-4 rounded-2xl text-xs sm:text-sm">
+                        <div class="flex items-start gap-2">
+                            <i class="fa-solid fa-heart text-pink-500 mt-1"></i>
+                            <div>
+                                <strong class="text-slate-800 dark:text-slate-200">Sở thích:</strong>
+                                <p class="text-slate-600 dark:text-slate-400">${m.hobby}</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <i class="fa-solid fa-quote-left text-blue-500 mt-1"></i>
+                            <div>
+                                <strong class="text-slate-800 dark:text-slate-200">Câu nói yêu thích:</strong>
+                                <p class="text-slate-600 dark:text-slate-400 italic font-medium">${m.quote}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            const modal = document.getElementById('memberModal');
+            const content = document.getElementById('memberModalContent');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            content.classList.remove('scale-95');
+            content.classList.add('scale-100');
+        }
+
+        function closeMemberModal() {
+            const modal = document.getElementById('memberModal');
+            const content = document.getElementById('memberModalContent');
+            content.classList.remove('scale-100');
+            content.classList.add('scale-95');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        /* ----------------------------------------------------
+         5. GALLERY & LIGHTBOX FUNCTIONS
+        ---------------------------------------------------- */
+        function renderGallery(cat) {
+            const grid = document.getElementById('galleryGrid');
+            const filtered = (cat === 'all') ? galleryData : galleryData.filter(g => g.category === cat);
+
+            grid.innerHTML = filtered.map(g => `
+                <div onclick="openLightbox('${g.img}', '${g.title}')" class="group relative rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition duration-300 bg-slate-800 aspect-video sm:aspect-square">
+                    <img src="${g.img}" alt="${g.title}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                        <p class="text-white text-xs font-bold">${g.title}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterGallery(cat) {
+            document.querySelectorAll('.gallery-tab').forEach(tab => {
+                if(tab.getAttribute('data-cat') === cat) {
+                    tab.classList.add('bg-blue-600', 'text-white');
+                    tab.classList.remove('bg-slate-100', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300');
+                } else {
+                    tab.classList.remove('bg-blue-600', 'text-white');
+                    tab.classList.add('bg-slate-100', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300');
+                }
+            });
+            renderGallery(cat);
+        }
+
+        function openLightbox(imgUrl, caption) {
+            const modal = document.getElementById('lightboxModal');
+            document.getElementById('lightboxImg').src = imgUrl;
+            document.getElementById('lightboxCaption').innerText = caption;
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightboxModal').classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        /* ----------------------------------------------------
+         6. TIMETABLE & COUNTDOWN
+        ---------------------------------------------------- */
+        function renderSchedule(dayKey) {
+            // Tab highlight
+            document.querySelectorAll('.sched-btn').forEach(btn => {
+                if(btn.getAttribute('data-day') === dayKey) {
+                    btn.classList.add('bg-blue-600', 'text-white');
+                    btn.classList.remove('text-slate-600', 'dark:text-slate-300');
+                } else {
+                    btn.classList.remove('bg-blue-600', 'text-white');
+                    btn.classList.add('text-slate-600', 'dark:text-slate-300');
+                }
+            });
+
+            const tbody = document.getElementById('scheduleBody');
+            const dayData = timetableData[dayKey] || [];
+
+            tbody.innerHTML = dayData.map(item => `
+                <tr class="hover:bg-slate-100/50 dark:hover:bg-slate-800/40 transition">
+                    <td class="py-3 px-4 font-bold text-blue-600 dark:text-blue-400">Tiết ${item.period}</td>
+                    <td class="py-3 px-4 text-xs font-medium text-slate-500 dark:text-slate-400">${item.time}</td>
+                    <td class="py-3 px-4 font-semibold text-slate-800 dark:text-slate-100">${item.subject}</td>
+                    <td class="py-3 px-4 text-xs text-slate-500 dark:text-slate-400">${item.note}</td>
+                </tr>
+            `).join('');
+        }
+
+        function initCountdown() {
+            // Target Date (20 days from current date)
+            const targetDate = new Date();
+            targetDate.setDate(targetDate.getDate() + 14);
+
+            function update() {
+                const now = new Date();
+                const diff = targetDate - now;
+
+                if (diff <= 0) return;
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                const mins = Math.floor((diff / 1000 / 60) % 60);
+                const secs = Math.floor((diff / 1000) % 60);
+
+                document.getElementById('cdDays').innerText = days < 10 ? '0' + days : days;
+                document.getElementById('cdHours').innerText = hours < 10 ? '0' + hours : hours;
+                document.getElementById('cdMins').innerText = mins < 10 ? '0' + mins : mins;
+                document.getElementById('cdSecs').innerText = secs < 10 ? '0' + secs : secs;
+            }
+
+            update();
+            setInterval(update, 1000);
+        }
+
+        /* ----------------------------------------------------
+         7. GUESTBOOK / MEMORY WALL (LOCALSTORAGE)
+        ---------------------------------------------------- */
+        const defaultMessages = [
+            { name: "Cô Nguyễn Thị Mai", group: "GVCN", msg: "Chúc tập thể 11B7 luôn đoàn kết, chăm ngoan và đạt nhiều thành tích xuất sắc trong năm học này!", time: "Hôm qua" },
+            { name: "Hoàng Anh Đức", group: "Tổ 1", msg: "Mãi yêu 11B7! Cùng nhau chinh phục mọi kỳ thi nhé bà con!", time: "2 ngày trước" },
+            { name: "Nguyễn Minh Triết", group: "Tổ 1", msg: "Văn nghệ 20/11 vừa rồi đỉnh quá cả lớp ơi! B7 vô địch!", time: "3 ngày trước" }
+        ];
+
+        function loadGuestbook() {
+            const saved = localStorage.getItem('11b7_guestbook');
+            const messages = saved ? JSON.parse(saved) : defaultMessages;
+
+            document.getElementById('guestbookCount').innerText = `${messages.length} lời nhắn`;
+            const feed = document.getElementById('guestbookFeed');
+
+            feed.innerHTML = messages.map(m => `
+                <div class="glass-card p-4 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-2 animate-fade-in">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-500 to-indigo-500 text-white font-bold flex items-center justify-center text-xs">
+                                ${m.name.charAt(0)}
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-xs text-slate-800 dark:text-slate-100">${m.name}</h5>
+                                <span class="text-[10px] text-blue-600 dark:text-blue-400 font-medium">${m.group}</span>
+                            </div>
+                        </div>
+                        <span class="text-[10px] text-slate-400">${m.time || 'Vừa xong'}</span>
+                    </div>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">${m.msg}</p>
+                </div>
+            `).join('');
+        }
+
+        function handleGuestbookSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('gbName').value.trim();
+            const group = document.getElementById('gbGroup').value;
+            const msg = document.getElementById('gbMessage').value.trim();
+
+            if(!name || !msg) return;
+
+            const saved = localStorage.getItem('11b7_guestbook');
+            const messages = saved ? JSON.parse(saved) : defaultMessages;
+
+            const newMsg = {
+                name: name,
+                group: group,
+                msg: msg,
+                time: "Vừa xong"
+            };
+
+            messages.unshift(newMsg);
+            localStorage.setItem('11b7_guestbook', JSON.stringify(messages));
+
+            // Reset Form & Reload Feed
+            document.getElementById('guestbookForm').reset();
+            loadGuestbook();
+        }
+
+        /* ----------------------------------------------------
+         8. MUSIC PLAYER
+        ---------------------------------------------------- */
+        function initAudio() {
+            const audio = document.getElementById('bgAudio');
+            audio.src = playlist[currentSongIndex].src;
+            updateSongDisplay();
+        }
+
+        function updateSongDisplay() {
+            const song = playlist[currentSongIndex];
+            document.getElementById('songTitle').innerText = song.title;
+            document.getElementById('songArtist').innerText = song.artist;
+        }
+
+        function togglePlay() {
+            const audio = document.getElementById('bgAudio');
+            const icon = document.getElementById('playIcon');
+            const disk = document.getElementById('musicDisk');
+
+            if (isPlaying) {
+                audio.pause();
+                icon.className = "fa-solid fa-play text-xs";
+                disk.classList.remove('animate-spin');
+            } else {
+                audio.play().then(() => {
+                    icon.className = "fa-solid fa-pause text-xs";
+                    disk.classList.add('animate-spin');
+                }).catch(err => console.log("Audio playback blocked by browser policies"));
+            }
+            isPlaying = !isPlaying;
+        }
+
+        function nextSong() {
+            currentSongIndex = (currentSongIndex + 1) % playlist.length;
+            const audio = document.getElementById('bgAudio');
+            audio.src = playlist[currentSongIndex].src;
+            updateSongDisplay();
+            if (isPlaying) audio.play();
+        }
+
+        function prevSong() {
+            currentSongIndex = (currentSongIndex - 1 + playlist.length) % playlist.length;
+            const audio = document.getElementById('bgAudio');
+            audio.src = playlist[currentSongIndex].src;
+            updateSongDisplay();
+            if (isPlaying) audio.play();
+        }
+    </script>
+</body>
+</html>
